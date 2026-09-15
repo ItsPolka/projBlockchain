@@ -1,0 +1,20 @@
+hashlib   # para calcular hashes SHA-256
+time      # para timestamps
+json      # para serializar los datos del bloque antes de hashear
+
+
+Requerimientos de Software
+
+Basicos:
+
+Gestion de bloques
+    Generar Bloques (índice, timestamp, datos/transacciones, hash del bloque anterior, nonce y hash propio)
+    Añadir Bloques a la cadena de bloques.
+
+Calculo de Hashes
+    Calcular el hash SHA-256 de un bloque.
+    Verificar la integridad de la cadena de bloques mediante la comparación de hashes.
+
+Prueba de trabajo (minado)
+    El sistema debe implementar un mecanismo de minado que requiera encontrar un nonce válido
+    Debe existir un nivel de dificultad configurable (ej. hash debe empezar con N ceros)
