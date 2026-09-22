@@ -11,12 +11,12 @@ MAX_NONCE = 2 ** 200
 
 class Blockchain:
     def __init__(self):
-        self.transaction ={}
+        self.transaction = {}
         self.chain = []
         self.nodes = set()
 
         # Create the genesis block
-        self.new_block(previous_hash=1, proof=100)
+        self.new_block(previous_hash=1, proof=100, sender="", recipient="", amount="")
 
     def new_block(self, proof, previous_hash, sender, recipient, amount):
 
