@@ -1,10 +1,13 @@
 Block
+------------------
     Previous Hash
-
+    _________
     Seller
     Recipient
     Object
     Ammount
     Cost
+    _________
 
-    
+    firma
+-------------------

@@ -7,7 +7,7 @@ Code provided by:   @katakakikita
 https://medium.com/@katakakikita/build-your-own-blockchain-in-python-a-practical-guide-f9620327ed03
 """
 
-class Blockchain:
+class Block:
     def __init__(self):
         self.transaction ={}
         self.chain = []
