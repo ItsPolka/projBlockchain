@@ -21,7 +21,7 @@ class Blockchain:
 
     def new_block(self, index,timestamp,transaction,previousHash,nonce):
 
-
+# Hola mundo
         pass
 
 
