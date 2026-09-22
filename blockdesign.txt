@@ -1,0 +1,10 @@
+Block
+    Previous Hash
+
+    Seller
+    Recipient
+    Object
+    Ammount
+    Cost
+
+    
