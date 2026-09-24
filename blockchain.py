@@ -1,6 +1,7 @@
 import hashlib
 import json
 from time import time
+from block import Block
 
 """
 Code provided by:   @katakakikita
@@ -15,41 +16,13 @@ class Blockchain:
         self.chain = []
         self.nodes = set()
 
-    def new_block(self, index, timestamp, transaction, previousHash, nonce):
-        nblock = block()
-
-
-    @staticmethod
-    def calculate_hash(block):
-        """
-        Creates a SHA-256 hash of a Block
-
-        :param block: Block
-        """
-        pass
+    def new_block(self, transaction):
+        nblock = Block(len(self.chain), transaction, Block.calculate_hash(self.last_block))
+        self.chain.append(nblock)
 
     @property
     def last_block(self):
         """
         Returns the last Block in the chain
         """
-        pass
-
-    @staticmethod
-    def mine_block(transaction, last_hash, target):
-        header = {
-            'last_hash': last_hash,
-            'transaction_hash': Blockchain.calculate_hash(transaction),
-            'time': time,
-            'target': target,
-            'nonce': 0
-        }
-        while True:
-            result_hash = hashlib.sha256(hashlib.sha256(json.dumps(header).encode()).digest())
-            if result_hash < target:
-                return (header, result_hash)
-            header['nonce'] += 1
-
-            if header['nonce'] > MAX_NONCE:
-                header['time'] = time
-                header['nonce'] = 0
+        return self.chain[-1]
