@@ -1,4 +1,4 @@
-help me with this: import hashlib
+import hashlib
 import json
 from time import time
 
@@ -11,20 +11,12 @@ MAX_NONCE = 2 ** 200
 
 class Blockchain:
     def __init__(self):
-        self.index=index
-        self.timestamp=timestamp
-        self.transaction=transaction
-        self.previous_hash = previousHash
-        self.nonce = 0
-        self.hash = self.calculateHash()
+        self.current_transactions = []
+        self.chain = []
+        self.nodes = set()
 
-        # Create the genesis block
-        self.new_block(previous_hash=1, proof=100, sender="", recipient="", amount="")
-
-    def new_block(self, index,timestamp,transaction,previousHash,nonce):
-
-# Hola mundo
-        pass
+    def new_block(self, index, timestamp, transaction, previousHash, nonce):
+        nblock = block()
 
 
     @staticmethod

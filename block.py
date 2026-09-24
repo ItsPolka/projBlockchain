@@ -1,0 +1,2 @@
+class block():
+    pass
