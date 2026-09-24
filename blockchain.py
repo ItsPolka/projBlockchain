@@ -40,4 +40,22 @@ class Blockchain:
         Returns the last Block in the chain
         """
         pass
-    #Esto es una prueba
+
+    @staticmethod
+    def mine_block(transaction, last_hash, target):
+        header = {
+            'last_hash': last_hash,
+            'transaction_hash': Blockchain.calculate_hash(transaction),
+            'time': time,
+            'target': target,
+            'nonce': 0
+        }
+        while True:
+            result_hash = hashlib.sha256(hashlib.sha256(json.dumps(header).encode()).digest())
+            if result_hash < target:
+                return (header, result_hash)
+            header['nonce'] += 1
+
+            if header['nonce'] > MAX_NONCE:
+                header['time'] = time
+                header['nonce'] = 0
